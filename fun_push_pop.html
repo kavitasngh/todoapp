@@ -1,0 +1,96 @@
+<html>
+<body>
+<script type="text/javascript">
+var num,element, choice,c,ch,splic_ele;
+var total=0;
+num=[];
+do{
+
+
+
+/*num.push(element);
+console.log(num);*/
+
+
+/*num.pop();
+console.log(num);*/
+
+choice=prompt("What operation you want to perform: 1.Push, 2.Pop,3.Display,4.Splice,5.Sum,6.Exit");
+ch=parseInt(choice);
+
+switch(ch){
+	case 1:
+	element = parseInt(prompt("Enter a number"));
+	fillElement(element);
+	break;
+
+	case 2:
+	delElement(element);
+	break;
+
+	case 3:
+	display(element);
+	break;
+
+	case 4:
+	element=parseInt(prompt("Enter the number"));
+	splic(num,element);
+	break;
+
+	case 5:
+	sum(element);
+	break
+
+	case 6:
+	break;
+
+	default:
+	alert("Invalid Operation");
+}
+}while(ch != 6)
+/*c=prompt("Do you want to Continue: 'yes' or 'y' OR 'no' 'n'");
+console.log(c);
+}while(c=='yes' || c=='y');*/
+	alert("Thank you");
+
+
+function fillElement(ele){
+	num.push(ele);
+	console.log(num);
+}
+//fillElement(element);
+
+function delElement(ele){
+	num.pop(ele);
+	console.log(num);
+}
+//delElement(element);
+
+
+function display(ele){
+	for(var i=0;i<num.length;i++)
+	console.log("The elements are" +i+ ":" +num[i]);
+}
+
+function splic(ele,value){
+	var j=num.indexOf(value);
+	if(j != -1){
+		num.splice(j,1);
+	}
+}
+
+function sum(ele){
+		len=num.length;
+		for(i=0;i<len;i++){
+			total += num[i];
+		}
+		console.log("The sum of array is:",+total);
+		//alert("The sum is:",+total);
+}
+	  
+
+
+
+</script>
+</body>
+</html>
